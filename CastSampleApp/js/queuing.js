@@ -64,7 +64,7 @@ class CastQueue extends cast.framework.QueueBase {
   */
   nextItems(referenceItemId) {
     // Return sample content.
-    return [this.sampleItem];
+    return [];//[this.sampleItem];
   }
 
   /**
@@ -76,7 +76,7 @@ class CastQueue extends cast.framework.QueueBase {
   */
   prevItems(referenceItemId) {
     // Return sample content.
-    return [this.sampleItem];
+    return [];//[this.sampleItem];
   }
 };
 
