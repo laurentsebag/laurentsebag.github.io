@@ -20,23 +20,23 @@ Cast.
 
 'use strict';
 
-import { CastQueue } from './queuing.js';
+import {CastQueue} from './queuing.js';
 
 const context = cast.framework.CastReceiverContext.getInstance();
 const playerManager = context.getPlayerManager();
 
 // Listen and log all Core Events.
 playerManager.addEventListener(cast.framework.events.category.CORE,
-  event => {
-    console.log("Core event: " + event.type);
-    console.log(event);
-  });
+    event => {
+        console.log("Core event: " + event.type);
+        console.log(event);
+    });
 
 playerManager.addEventListener(
-  cast.framework.events.EventType.MEDIA_STATUS, (event) => {
-    console.log("MEDIA_STATUS event: " + event.type);
-    console.log(event);
-});
+    cast.framework.events.EventType.MEDIA_STATUS, (event) => {
+        console.log("MEDIA_STATUS event: " + event.type);
+        console.log(event);
+    });
 
 playerManager.addEventListener(cast.framework.events.EventType.MEDIA_FINISHED, event => {
     if (event.endedReason === 'ERROR') {
@@ -53,17 +53,18 @@ playerManager.addEventListener(cast.framework.events.EventType.ERROR, event => {
 
 // Intercept the LOAD request to be able to read in a contentId and get data.
 playerManager.setMessageInterceptor(
-  cast.framework.messages.MessageType.LOAD, loadRequestData => {
-    //return loadRequestData;
-    const loadError = new cast.framework.messages.ErrorData(cast.framework.messages.ErrorType.LOAD_FAILED);
-    loadError.reason = cast.framework.messages.ErrorReason.PARENTAL_CONTROL_RESTRICTED;
-    loadError.detailedErrorCode = cast.framework.events.DetailedErrorCode.APP;
-    loadError.requestId = 999;
-    loadError.customData = {
-        ignoreForConvivaReporting: true
-    };
-    return loadError;
-  });
+    cast.framework.messages.MessageType.LOAD, loadRequestData => {
+        loadRequestData.media.customData.ignoreErrorsForConvivaReporting = true;
+
+        const loadError = new cast.framework.messages.ErrorData(cast.framework.messages.ErrorType.LOAD_FAILED);
+        loadError.reason = cast.framework.messages.ErrorReason.PARENTAL_CONTROL_RESTRICTED;
+        loadError.detailedErrorCode = cast.framework.events.DetailedErrorCode.APP;
+        // loadError.requestId = 999;
+        loadError.customData = {
+            ignoreForConvivaReporting: true
+        };
+        return loadError;
+    });
 
 const playbackConfig = new cast.framework.PlaybackConfig();
 
@@ -77,28 +78,28 @@ controls.clearDefaultSlotAssignments();
 
 // Assign buttons to control slots.
 controls.assignButton(
-  cast.framework.ui.ControlsSlot.SLOT_1,
-  cast.framework.ui.ControlsButton.QUEUE_PREV
+    cast.framework.ui.ControlsSlot.SLOT_1,
+    cast.framework.ui.ControlsButton.QUEUE_PREV
 )
 controls.assignButton(
-  cast.framework.ui.ControlsSlot.SLOT_2,
-  cast.framework.ui.ControlsButton.CAPTIONS
+    cast.framework.ui.ControlsSlot.SLOT_2,
+    cast.framework.ui.ControlsButton.CAPTIONS
 )
 controls.assignButton(
-  cast.framework.ui.ControlsSlot.SLOT_3,
-  cast.framework.ui.ControlsButton.SEEK_FORWARD_15
+    cast.framework.ui.ControlsSlot.SLOT_3,
+    cast.framework.ui.ControlsButton.SEEK_FORWARD_15
 )
 controls.assignButton(
-  cast.framework.ui.ControlsSlot.SLOT_4,
-  cast.framework.ui.ControlsButton.QUEUE_NEXT
+    cast.framework.ui.ControlsSlot.SLOT_4,
+    cast.framework.ui.ControlsButton.QUEUE_NEXT
 )
 
 context.start({
-  queue: new CastQueue(),
-  playbackConfig: playbackConfig,
-  supportedCommands: cast.framework.messages.Command.ALL_BASIC_MEDIA |
-                      cast.framework.messages.Command.QUEUE_PREV |
-                      cast.framework.messages.Command.QUEUE_NEXT
+    queue: new CastQueue(),
+    playbackConfig: playbackConfig,
+    supportedCommands: cast.framework.messages.Command.ALL_BASIC_MEDIA |
+        cast.framework.messages.Command.QUEUE_PREV |
+        cast.framework.messages.Command.QUEUE_NEXT
 });
 
 
