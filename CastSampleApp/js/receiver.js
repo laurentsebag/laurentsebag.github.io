@@ -55,8 +55,13 @@ playerManager.addEventListener(cast.framework.events.EventType.ERROR, event => {
 playerManager.setMessageInterceptor(
   cast.framework.messages.MessageType.LOAD, loadRequestData => {
     //return loadRequestData;
-    const loadError = new cast.framework.messages.ErrorData(cast.framework.messages.ErrorType.LOAD_CANCELLED);
-    loadError.reason = cast.framework.messages.ErrorReason.INVALID_REQUEST;
+    const loadError = new cast.framework.messages.ErrorData(cast.framework.messages.ErrorType.LOAD_FAILED);
+    loadError.reason = cast.framework.messages.ErrorReason.PARENTAL_CONTROL_RESTRICTED;
+    loadError.detailedErrorCode = cast.framework.events.DetailedErrorCode.APP;
+    loadError.requestId = 999;
+    loadError.customData = {
+        ignoreForConvivaReporting: true
+    };
     return loadError;
   });
 
