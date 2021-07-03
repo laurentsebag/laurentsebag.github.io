@@ -1,0 +1,30 @@
+{
+  "categories": [
+    {
+      "name": "Videos",
+      "hls": "https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/hls/",
+      "dash": "https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/dash/",
+      "mp4": "https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/",
+      "images": "https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/images/",
+      "tracks": "https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/tracks/",
+      "videos": [
+        {
+          "title": "TV5MONDE",
+          "subtitle": "TV5 Monde, stylisé « TV5MONDE », initialement TV5, est une chaîne de télévision généraliste francophone internationale créée le 2 janvier 1984. Siégeant à Paris, elle est détenue conjointement par des sociétés audiovisuelles publiques de France, de Belgique, de Suisse, du Canada et du Québec.\n\nTV5 Monde est l'un des trois plus grands réseaux mondiaux de télévision. Elle diffuse neuf signaux régionalisés distincts, ainsi que deux chaînes thématiques dédiées à l'Art de vivre (Style HD) et à la Jeunesse (Tivi5monde). TV5 Québec Canada fait également partie du réseau, mais est la propriété du Consortium de télévision Québec-Canada. En tant qu'opérateur de l'Organisation internationale de la francophonie (OIF), TV5 Monde met à disposition un portail multimédia gratuit et interactif pour apprendre et enseigner le français.",
+          "thumb": "https://images-eu.ssl-images-amazon.com/images/I/41QL%2BRcz1BL.png",
+          "image-480x270": "https://images-eu.ssl-images-amazon.com/images/I/41QL%2BRcz1BL.png",
+          "image-780x1200": "https://images-eu.ssl-images-amazon.com/images/I/41QL%2BRcz1BL.png",
+          "studio": "TV5MONDE Europe",
+          "duration": 0,
+          "sources": [
+            {
+              "type": "hls",
+              "mime": "application/x-mpegurl",
+              "url": "https://tv5europe-i.akamaihd.net/hls/live/729480/tv5europehls/master.m3u8"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
