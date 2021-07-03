@@ -31,7 +31,7 @@
             {
               "type": "hls",
               "mime": "application/x-mpegurl",
-              "url": "http://static.france24.com/live/F24_FR_HI_HLS/live_tv.m3u8"
+              "url": "https://static.france24.com/live/F24_FR_HI_HLS/live_tv.m3u8"
             }
           ]
         }
