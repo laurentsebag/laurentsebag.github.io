@@ -6,7 +6,7 @@
         {
           "title": "TV5MONDE",
           "subtitle": "TV5Monde, formerly known as TV5, is a French television network, broadcasting several channels of French-language programming. It is an approved participant member of the European Broadcasting Union.[2]\n\n\nAvailable in United Kingdom and across Europe via Astra 19.2 E FTA and Eutelsat 19 E FTA and streaming online and on the TvPlayer app",
-          "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/TV5MONDE_logo.png/300px-TV5MONDE_logo.png",
+          "thumb": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/TV5MONDE_logo.png/200px-TV5MONDE_logo.png",
           "image-480x270": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/TV5MONDE_logo.png/480px-TV5MONDE_logo.png",
           "image-780x1200": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/TV5MONDE_logo.png/780px-TV5MONDE_logo.png",
           "studio": "TV5MONDE Europe Live",
@@ -16,22 +16,6 @@
               "type": "hls",
               "mime": "application/x-mpegurl",
               "url": "https://tv5europe-i.akamaihd.net/hls/live/729480/tv5europehls/master.m3u8"
-            }
-          ]
-        },
-        {
-          "title": "France 24",
-          "subtitle": "France 24 (France vingt-quatre in French and Arabic channels, France veinticuatro in Spanish channel) is a French state-owned international news television network based in Paris.[1] Its channels broadcast in French, English, Arabic, and Spanish and are aimed at the overseas market.",
-          "thumb": "https://upload.wikimedia.org/wikipedia/en/thumb/6/65/FRANCE_24_logo.svg/300px-FRANCE_24_logo.svg.png",
-          "image-480x270": "https://upload.wikimedia.org/wikipedia/en/thumb/6/65/FRANCE_24_logo.svg/480px-FRANCE_24_logo.svg.png",
-          "image-780x1200": "https://upload.wikimedia.org/wikipedia/en/thumb/6/65/FRANCE_24_logo.svg/780px-FRANCE_24_logo.svg.png",
-          "studio": "France 24 Live",
-          "duration": 0,
-          "sources": [
-            {
-              "type": "hls",
-              "mime": "application/x-mpegurl",
-              "url": "https://static.france24.com/live/F24_FR_HI_HLS/live_tv.m3u8"
             }
           ]
         }
